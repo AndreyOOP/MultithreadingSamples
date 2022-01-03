@@ -49,8 +49,16 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ThreadBasics.cs" />
+    <Compile Include="AutoResetEvent.cs" />
+    <Compile Include="Tasks\CancellingTask.cs" />
+    <Compile Include="Threads\Syncronization\Lock.cs" />
+    <Compile Include="Tasks\TaskBasics.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Threads\Syncronization\LockBankAccountSample.cs" />
+    <Compile Include="Threads\Syncronization\LockReccursion.cs" />
+    <Compile Include="Threads\Syncronization\LockStatement.cs" />
+    <Compile Include="Threads\ThreadBasics.cs" />
+    <Compile Include="Threads\ThreadPool.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -1,7 +1,12 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+/*
+ * Start task via new Task, TaskFactory, pass parameter to the task, get task result
+ */
 namespace MultithreadingSamples
 {
     class Write
@@ -35,7 +40,7 @@ namespace MultithreadingSamples
 
     // Result in test output
     [TestClass]
-    public class ThreadBasics
+    public class TaskBasics
     {
         [TestMethod]
         public void CreateTaskViaFactory()
@@ -80,6 +85,26 @@ namespace MultithreadingSamples
 
             Assert.AreEqual(3, task1.Result);
             Assert.AreEqual(4, task2.Result);
+        }
+
+        [TestMethod]
+        public void Exception()
+        {
+            Foo();
+        }
+
+        IEnumerable<int> Foo()
+        {
+            throw new NotImplementedException();
+            yield return 123;
+        }
+
+        [TestMethod]
+        public void MyTestMethod()
+        {
+            var t = new Task<string>(() => "hello");
+            t.Start();
+            var zz = t.Result;
         }
     }
 }
