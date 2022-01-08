@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 
-namespace MultithreadingSamples
+namespace MultithreadingSamples.Syncronization
 {
     //Note: Enumerating .NET collections is also thread-unsafe in the sense that an exception is thrown if the list is modified during enumeration
     [TestClass]
-    public class Lock
+    public class LockKeywordSampleForThreads
     {
         // run in debug mode, then it works
         [TestMethod]
@@ -34,7 +34,7 @@ namespace MultithreadingSamples
                 new Thread(TestMethods.AddItemThreadSafe).Start();
 
             Thread.Sleep(1000);
-            
+
             foreach (var item in TestMethods.List)
                 Console.WriteLine(item);
 
