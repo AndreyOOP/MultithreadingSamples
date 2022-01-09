@@ -51,8 +51,9 @@
   <ItemGroup>
     <Compile Include="AutoResetEvent.cs" />
     <Compile Include="Syncronization\BankAccounts.cs" />
-    <Compile Include="Syncronization\Lock_Interlock_Sample.cs" />
-    <Compile Include="Syncronization\LockKeywordSampleForThreads.cs" />
+    <Compile Include="Syncronization\Different_Lock_Sample.cs" />
+    <Compile Include="Syncronization\Lock_ForThreads.cs" />
+    <Compile Include="Syncronization\MutexSample.cs" />
     <Compile Include="Syncronization\SpinLock_LockReccursion.cs" />
     <Compile Include="TasksBasics\CancellingTask.cs" />
     <Compile Include="TasksBasics\ExceptionHndling.cs" />

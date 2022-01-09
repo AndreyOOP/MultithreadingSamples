@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace MultithreadingSamples.Syncronization
 {
-    // Samples of usage: lock, Interlock when multiple threads manipulate data
+    // Samples of usage: lock, Interlock, ReadWrite lock, Mutex when multiple threads manipulate data
     [TestClass]
-    public class Lock_Interlock_Sample
+    public class Different_Lock_Sample
     {
         [TestMethod]
         [DynamicData(nameof(GetBankAccountImplementation), DynamicDataSourceType.Method)]
@@ -29,6 +29,7 @@ namespace MultithreadingSamples.Syncronization
             Task.WaitAll(tasks.ToArray());
 
             Console.WriteLine($"Account balance is {account.Balance}");
+            Assert.AreEqual(0, account.Balance);
         }
 
         public static IEnumerable<object[]> GetBankAccountImplementation()
@@ -36,6 +37,8 @@ namespace MultithreadingSamples.Syncronization
             yield return new[] { new BankAccountNoLock() }; // always different Balance but has to be zero
             yield return new[] { new BankAccountWithLock() };
             yield return new[] { new BankAccountInterlock() };
+            yield return new[] { new BankAccountMutex() };
+            yield return new[] { new BankAccountReadWriteLock() };
         }
     }
 

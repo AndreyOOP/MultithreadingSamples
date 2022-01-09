@@ -8,7 +8,7 @@ namespace MultithreadingSamples.Syncronization
 {
     //Note: Enumerating .NET collections is also thread-unsafe in the sense that an exception is thrown if the list is modified during enumeration
     [TestClass]
-    public class LockKeywordSampleForThreads
+    public class Lock_ForThreads
     {
         // run in debug mode, then it works
         [TestMethod]

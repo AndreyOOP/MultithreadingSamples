@@ -25,6 +25,12 @@ namespace MultithreadingSamples.Syncronization
         {
             Balance -= amount;
         }
+
+        public void Transfer(IAccount to, int amount)
+        {
+            Withdraw(amount);
+            to.Deposit(amount);
+        }
     }
 
     class BankAccountWithLock : IAccount
@@ -65,6 +71,62 @@ namespace MultithreadingSamples.Syncronization
         public void Withdraw(int amount)
         {
             Interlocked.Add(ref balance, -amount);
+        }
+    }
+
+    class BankAccountReadWriteLock : IAccount
+    {
+        private static ReaderWriterLockSlim rwLock = new ReaderWriterLockSlim(); // support lock reccursion - LockRecursionPolicy.SupportsRecursion
+
+        public int Balance { get; private set; }
+
+        public void Deposit(int amount)
+        {
+            rwLock.EnterWriteLock();
+            Balance += amount;
+            rwLock.ExitWriteLock();
+        }
+
+        public void Withdraw(int amount)
+        {
+            rwLock.EnterWriteLock();
+            Balance -= amount;
+            rwLock.ExitWriteLock();
+        }
+    }
+
+    class BankAccountMutex : IAccount
+    {
+        private static Mutex mutex = new Mutex();
+
+        public int Balance { get; private set; }
+
+        public void Deposit(int amount)
+        {
+            var taken = mutex.WaitOne();
+            try
+            {
+                Balance += amount;
+            }
+            finally
+            {
+                if (taken)
+                    mutex.ReleaseMutex();
+            }
+        }
+
+        public void Withdraw(int amount)
+        {
+            var taken = mutex.WaitOne();
+            try
+            {
+                Balance -= amount;
+            }
+            finally
+            {
+                if (taken)
+                    mutex.ReleaseMutex();
+            }
         }
     }
 }
