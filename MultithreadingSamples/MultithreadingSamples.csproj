@@ -50,13 +50,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutoResetEvent.cs" />
+    <Compile Include="ConcurrentCollections\Collections.cs" />
+    <Compile Include="ConcurrentCollections\ProducerConsumerSample.cs" />
     <Compile Include="Syncronization\BankAccounts.cs" />
     <Compile Include="Syncronization\Different_Lock_Sample.cs" />
     <Compile Include="Syncronization\Lock_ForThreads.cs" />
     <Compile Include="Syncronization\MutexSample.cs" />
     <Compile Include="Syncronization\SpinLock_LockReccursion.cs" />
+    <Compile Include="TaskCoordination\ChildTasks.cs" />
+    <Compile Include="TaskCoordination\Continuation.cs" />
     <Compile Include="TasksBasics\CancellingTask.cs" />
-    <Compile Include="TasksBasics\ExceptionHndling.cs" />
+    <Compile Include="TasksBasics\ExceptionHandling.cs" />
     <Compile Include="TasksBasics\WaitingInTask.cs" />
     <Compile Include="Threads\Syncronization\Lock.cs" />
     <Compile Include="TasksBasics\CreatingTasks.cs" />
