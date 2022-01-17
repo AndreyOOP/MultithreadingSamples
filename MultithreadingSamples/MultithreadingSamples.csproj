@@ -61,6 +61,8 @@
     <Compile Include="TaskCoordination\ChildTasks.cs" />
     <Compile Include="TaskCoordination\Continuation.cs" />
     <Compile Include="TaskCoordination\CountdownSample.cs" />
+    <Compile Include="TaskCoordination\ManualResetEvent.cs" />
+    <Compile Include="TaskCoordination\SemaphoreSample.cs" />
     <Compile Include="TasksBasics\CancellingTask.cs" />
     <Compile Include="TasksBasics\ExceptionHandling.cs" />
     <Compile Include="TasksBasics\WaitingInTask.cs" />
