@@ -52,6 +52,9 @@
     <Compile Include="5. ParallelLoops\ParallelSamples.cs" />
     <Compile Include="5. ParallelLoops\StoppingIteration.cs" />
     <Compile Include="5. ParallelLoops\ThreadLocalStorage.cs" />
+    <Compile Include="6. PLINQ\AsParallel.cs" />
+    <Compile Include="6. PLINQ\MergeOptions.cs" />
+    <Compile Include="6. PLINQ\ParallelCancellationToken.cs" />
     <Compile Include="AutoResetEvent.cs" />
     <Compile Include="3. ConcurrentCollections\Collections.cs" />
     <Compile Include="3. ConcurrentCollections\ProducerConsumerSample.cs" />
