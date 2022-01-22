@@ -56,7 +56,7 @@
     <Compile Include="6. PLINQ\MergeOptions.cs" />
     <Compile Include="6. PLINQ\ParallelCancellationToken.cs" />
     <Compile Include="7.Async\TaskRunSample.cs" />
-    <Compile Include="AutoResetEvent.cs" />
+    <Compile Include="Old\AutoResetEvent.cs" />
     <Compile Include="3. ConcurrentCollections\Collections.cs" />
     <Compile Include="3. ConcurrentCollections\ProducerConsumerSample.cs" />
     <Compile Include="2. Syncronization\BankAccounts.cs" />
@@ -73,13 +73,13 @@
     <Compile Include="1. TasksBasics\CancellingTask.cs" />
     <Compile Include="1. TasksBasics\ExceptionHandling.cs" />
     <Compile Include="1. TasksBasics\WaitingInTask.cs" />
-    <Compile Include="Threads\Syncronization\Lock.cs" />
+    <Compile Include="Old\Syncronization\Lock.cs" />
     <Compile Include="1. TasksBasics\CreatingTasks.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Threads\Syncronization\LockBankAccountSample.cs" />
-    <Compile Include="Threads\Syncronization\LockStatement.cs" />
-    <Compile Include="Threads\ThreadBasics.cs" />
-    <Compile Include="Threads\ThreadPool.cs" />
+    <Compile Include="Old\Syncronization\LockBankAccountSample.cs" />
+    <Compile Include="Old\Syncronization\LockStatement.cs" />
+    <Compile Include="Old\ThreadBasics.cs" />
+    <Compile Include="Old\ThreadPool.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
